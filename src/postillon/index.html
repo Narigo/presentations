@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+  <meta charset="UTF-8"/>
+  <title>Der Postillon und seine Technik</title>
+  <meta name="description" content="Vorstellung der Technik hinter dem Postillon"/>
+  <meta name="author" content="Joern Bernhardt"/>
+  <meta name="apple-mobile-web-app-capable" content="yes"/>
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent"/>
+  <meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1.0,user-scalable=no"/>
+  <link rel="stylesheet" href="css/main.css"/>
+</head>
+<body>
+<div class="reveal">
+  <li class="slides">
+    <section>
+      <h1>Der Postillon und seine Technik</h1>
+
+      <p>Joern Bernhardt</p>
+    </section>
+
+    <section id="slide-postillon-overview">
+      <h1 class="overlay">Der Postillon</h1>
+
+      <div class="fragment roll-in desktop-pic" data-background-transition="slide">
+        <img src="img/desktop.png" alt="Der Postillon im Desktop"/>
+      </div>
+      <div class="fragment roll-in mobile-pic" data-background-transition="slide">
+        <img src="img/mobile.png" alt="Der Postillon auf Mobilgeräten"/>
+      </div>
+      <div class="fragment roll-in app-pic" data-background-transition="slide">
+        <img src="img/app.png" alt="Der Postillon Newsticker als App"/>
+      </div>
+
+      <aside class="notes">
+        <ul>
+          <li>2008 online gegangen</li>
+          <li>1 Mann Unternehmen bis 2014</li>
+          <li>> 300.000 Seitenaufrufe pro Tag</li>
+          <li>Blogger.com (Blogspot)</li>
+          <li>Jeden Wochentag min. 1 neuer Artikel</li>
+          <li>Desktop, mobile und App als Bilder im Hintergrund</li>
+        </ul>
+      </aside>
+    </section>
+
+    <section id="slide-campudus-overview">
+      <h1>Campudus</h1>
+
+      <div class="texter">
+        <div class="adjs">
+          <span class="adj active text-1"></span>
+          <span class="adj inactive text-2"></span>
+        </div>
+        <div class="subs">
+          <span class="sub active text-1"></span>
+          <span class="sub inactive text-2"></span>
+        </div>
+      </div>
+
+      <aside class="notes">
+        <ul>
+          <li>Web- und App-Entwicklung</li>
+          <li>Zwei Produkte, einige Projekte</li>
+        </ul>
+      </aside>
+    </section>
+
+    <section id="slide-tech-stack">
+      <h1>Stack</h1>
+
+      <div>pic des Stacks und mit Fragmenten Sachen durchstreichen</div>
+
+      <aside class="notes">
+        <ul>
+          <li>Keine richtige Datenbank</li>
+          <li>Keine View Templates</li>
+          <li>Keine AJAX-Möglichkeiten</li>
+          <li>Keine serverseitigen Skripte</li>
+          <li>Nur eine Datei</li>
+        </ul>
+      </aside>
+    </section>
+
+    <section id="slide-blogger-tech-stack">
+      <h1>Blogger</h1>
+
+      <div>XML Template</div>
+
+      <aside class="notes">
+        <ul>
+          <li>Nur eine Datei</li>
+        </ul>
+      </aside>
+    </section>
+
+    <section id="slide-blogger-pros">
+      <h1>Was kann Blogger?</h1>
+      <ul>
+        <li class="fragment">Kostenlos</li>
+        <li class="fragment">Skaliert ohne Probleme</li>
+        <li class="fragment">... hohe Sicherheit durch Einschränkungen der Möglichkeiten</li>
+        <li class="fragment">... hohe Benutzerfreundlichkeit durch Minimierung der Anzahl an Features</li>
+        <li class="fragment">... sehr übersichtlich, da man nur in einem Template arbeiten muss</li>
+        <li class="fragment">... ist dank vieler Vorgaben sofort betriebsbereit</li>
+        <li class="fragment">... verfolgt Gamification-Ansatz: easy-to-learn, hard-to-master</li>
+      </ul>
+
+      <aside class="notes">
+        <ul>
+          <li>Habe ich schon erwähnt, dass es nichts kostet?</li>
+        </ul>
+      </aside>
+    </section>
+
+    <section id="slide-blogger-workflow-theory">
+      <section>
+        <h1>Theoretischer Workflow</h1>
+      </section>
+
+      <section>
+        <h1>Vorlage bearbeiten</h1>
+
+        <p>(DEMO)</p>
+      </section>
+    </section>
+
+    <section id="slide-blogger-workflow-practice">
+      <section>
+        <h1>Praktischer Workflow</h1>
+      </section>
+
+      <section>
+        <h2>Vorlage bearbeiten</h2>
+      </section>
+
+      <section>
+        <h2>Preview anschauen</h2>
+      </section>
+
+      <section>
+        <h2>Vorlage angucken</h2>
+      </section>
+
+      <section>
+        <h2>Nach Hacks googlen</h2>
+      </section>
+
+      <section>
+        <h2>Vorlage bearbeiten</h2>
+      </section>
+
+      <section>
+        <h2>Preview anschauen</h2>
+      </section>
+
+      <section>
+        <h2>in Panik geraten</h2>
+      </section>
+
+      <section>
+        <h2>nochmal von vorn</h2>
+      </section>
+    </section>
+
+    <section id="slide-blogger-hacks">
+      <section>
+        <h1>Ein paar Hacks</h1>
+      </section>
+
+      <section>
+        <h2>Mobile Blogger stylesheets deaktivieren</h2>
+
+        <div>
+        <pre><code>
+          &amp;lt;span id=&quot;skin-hack&quot;&amp;gt;
+          &amp;lt;style type=&quot;text/css&quot;&amp;gt; /*
+          &lt;b:skin&gt;&lt;![CDATA[ */ ]]&gt;&lt;/b:skin&gt;
+          &amp;lt;/span&amp;gt;
+        </code></pre>
+        </div>
+      </section>
+    </section>
+
+    <section id="slide-blogger-tips">
+      <section>
+        <h1>Ein paar Tipps</h1>
+      </section>
+
+      <section>
+        <h2>Build-Setup</h2>
+        <ul>
+          <li>Shell-Skripte</li>
+          <li>Grunt</li>
+          <li>Gulp</li>
+          <li>Broccoli</li>
+          <li>...</li>
+        </ul>
+      </section>
+
+      <section>
+        <h2>Aufspalten der Mobil- und Desktop-Styles</h2>
+        <ol>
+          <li>Ein CSS für Desktopansicht</li>
+          <li>Ein CSS für mobile Ansicht</li>
+          <li>Ein CSS für beide</li>
+        </ol>
+      </section>
+
+      <section>
+        <h2>Skripte für Arbeitserleichterungen</h2>
+        <ul>
+          <li>Bildergalerie erstellen</li>
+          <li>Archivartikel austauschen</li>
+          <li>DEMO</li>
+        </ul>
+      </section>
+    </section>
+
+</div>
+</div>
+<script src="js/app.js"></script>
+</body>
+</html>

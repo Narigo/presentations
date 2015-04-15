@@ -1,0 +1,8 @@
+.slides {
+  .overlay {
+    background-color: $overlay-background-color;
+    padding: 25px;
+  }
+
+  @import "slide-campudus-overview", "slide-postillon-overview";
+}
