@@ -11,7 +11,7 @@ var running = false;
 var timer;
 
 function next() {
-  texts[i].innerHTML = adj[Math.floor(Math.random() * adj.length)] + ' ' + sub[Math.floor(Math.random() * sub.length)];
+  texts[i].innerHTML = '... die ' + adj[Math.floor(Math.random() * adj.length)] + ' ' + sub[Math.floor(Math.random() * sub.length)];
   texts[i].style.translateY = '-50';
   texts[i].classList.add('active');
   texts[i].classList.remove('inactive');
@@ -20,7 +20,7 @@ function next() {
   texts[i].classList.remove('active');
 
   if (running) {
-    timer = setTimeout(next, 1000);
+    timer = setTimeout(next, 1500);
   }
 }
 

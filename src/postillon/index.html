@@ -12,7 +12,7 @@
 </head>
 <body>
 <div class="reveal">
-  <li class="slides">
+  <div class="slides">
     <section>
       <h1>Der Postillon und seine Technik</h1>
 
@@ -171,7 +171,7 @@
       </section>
 
       <section>
-        <h2>Mobile Blogger stylesheets deaktivieren</h2>
+        <h2>Mobile Blogger Stylesheets deaktivieren</h2>
 
         <div>
         <pre><code>
@@ -181,6 +181,32 @@
           &amp;lt;/span&amp;gt;
         </code></pre>
         </div>
+      </section>
+
+      <section>
+        <h2>Bildgrößen für Facebook und Co anpassen</h2>
+        <pre><code>
+          &lt;meta expr:content='&amp;quot;http://www.eigener-server.de/edit_blogger_thumbnail.php?url=&amp;quot; +
+          data:blog.postImageThumbnailUrl' property='og:image'/&gt;
+          &lt;link expr:href='&amp;quot;http://www.eigener-server.de/edit_blogger_thumbnail.php?url=&amp;quot; +
+          data:blog.postImageThumbnailUrl' rel='image_src'/&gt;
+        </code></pre>
+        <h3>Serverseitiges Skript:</h3>
+        <ol>
+          <li>die URL auf "/s1600/" (größtmögliche Größe) anpassen</li>
+          <li>herunterladen</li>
+          <li>das Ergebnis davon zurückgeben</li>
+          <li>Achtung: Reine Weiterleitung funktioniert nicht bei jedem sozialen Netzwerk.</li>
+        </ol>
+        <p class="fragment">... inzwischen liefert Blogger jedoch gleich größere Bilder, die auch in Facebook okay
+          aussehen. :)</p>
+      </section>
+
+      <section>
+        <h2>AND Bedingungen im JavaScript machen Probleme?</h2>
+        <pre><code>
+          &amp;amp;&amp;amp;
+        </code></pre>
       </section>
     </section>
 
@@ -226,12 +252,28 @@
       <section>
         <h2>Newsticker</h2>
         <ul>
-          <li>Cache durch Google Widgets</li>
-          <li>Cordova-App</li>
+          <li>Shared Server
+            <ul class="fragment">
+              <li>Cache durch Google Widgets</li>
+            </ul>
+          </li>
+          <li>App ist Cordova
+            <ul class="fragment">
+              <li>Push Nachrichten bloß nicht selbst implementieren!</li>
+            </ul>
+          </li>
+        </ul>
+      </section>
+      <section>
+        <h2>Sonstige Learnings</h2>
+        <ul>
+          <li>Tracking ist wichtig</li>
+          <li>Vermarkter sind normalerweise keine Programmierer</li>
+          <li>... Kunden auch nicht</li>
         </ul>
       </section>
     </section>
-</div>
+  </div>
 </div>
 <script src="js/app.js"></script>
 </body>

@@ -9,10 +9,16 @@
     height: 50px;
     width: 100%;
 
+    .text-wrap {
+      width: 100%;
+    }
+
     .text {
       position: absolute;
       text-align: center;
       height: 50px;
+      left: 0;
+      right: 0;
     }
 
     .active {
