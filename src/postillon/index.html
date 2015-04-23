@@ -174,7 +174,7 @@
         <h2>Mobile Blogger Stylesheets deaktivieren</h2>
 
         <div>
-        <pre><code>
+        <pre><code class="html">
           &amp;lt;span id=&quot;skin-hack&quot;&amp;gt;
           &amp;lt;style type=&quot;text/css&quot;&amp;gt; /*
           &lt;b:skin&gt;&lt;![CDATA[ */ ]]&gt;&lt;/b:skin&gt;
@@ -185,7 +185,7 @@
 
       <section>
         <h2>Bildgrößen für Facebook und Co anpassen</h2>
-        <pre><code>
+        <pre><code class="html">
           &lt;meta expr:content='&amp;quot;http://www.eigener-server.de/edit_blogger_thumbnail.php?url=&amp;quot; +
           data:blog.postImageThumbnailUrl' property='og:image'/&gt;
           &lt;link expr:href='&amp;quot;http://www.eigener-server.de/edit_blogger_thumbnail.php?url=&amp;quot; +
@@ -203,9 +203,16 @@
       </section>
 
       <section>
-        <h2>AND Bedingungen im JavaScript machen Probleme?</h2>
-        <pre><code>
-          &amp;amp;&amp;amp;
+        <h2>Speicherprobleme mit JS?</h2>
+        <pre><code class="javascript">
+          if (a < b && b > 0) { /* ... */ }
+        </code></pre>
+      </section>
+
+      <section>
+        <h2>Ist doch klar:</h2>
+        <pre><code class="javascript">
+          if (a &amp;lt; b &amp;amp;&amp;amp; b &amp;gt; 0) { /* ... */ }
         </code></pre>
       </section>
     </section>
@@ -229,18 +236,19 @@
       <section>
         <h2>Aufspalten der Mobil- und Desktop-Styles</h2>
         <ol>
-          <li>Ein CSS für Desktopansicht</li>
-          <li>Ein CSS für mobile Ansicht</li>
-          <li>Ein CSS für beide</li>
+          <li class="fragment">Ein CSS für Desktopansicht</li>
+          <li class="fragment">Ein CSS für mobile Ansicht</li>
+          <li class="fragment">Ein CSS für beide</li>
         </ol>
       </section>
 
       <section>
         <h2>Skripte für Arbeitserleichterungen</h2>
         <ul>
-          <li>Bildergalerie erstellen</li>
-          <li>Archivartikel austauschen</li>
-          <li>DEMO</li>
+          <li class="fragment">Bildergalerie erstellen</li>
+          <li class="fragment">Archivartikel austauschen</li>
+          <li class="fragment">Videos einbinden</li>
+          <li class="fragment">DEMO</li>
         </ul>
       </section>
     </section>
@@ -267,9 +275,9 @@
       <section>
         <h2>Sonstige Learnings</h2>
         <ul>
-          <li>Tracking ist wichtig</li>
-          <li>Vermarkter sind normalerweise keine Programmierer</li>
-          <li>... Kunden auch nicht</li>
+          <li class="fragment">Tracking ist wichtig</li>
+          <li class="fragment">Vermarkter sind normalerweise keine Programmierer</li>
+          <li class="fragment">... Kunden meist auch nicht :)</li>
         </ul>
       </section>
     </section>
