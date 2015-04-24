@@ -1,4 +1,4 @@
-var Reveal = require('reveal');
+var Reveal = require('reveal.js');
 
 var campudusSlide = require('./slide-campudus-overview.js');
 
@@ -16,5 +16,14 @@ Reveal.initialize({
   history : true,
   center : true,
   // default/cube/page/concave/zoom/linear/fade/none
-  transition : 'none'
+  transition : 'none',
+  dependencies : [
+    {
+      src : 'plugin/highlight/highlight.js',
+      async : true,
+      callback : function () {
+        hljs.initHighlightingOnLoad();
+      }
+    }
+  ]
 });

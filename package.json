@@ -11,9 +11,7 @@
   },
   "author": "Joern Bernhardt",
   "license": "MIT",
-  "dependencies": {
-    "reveal": "0.0.4"
-  },
+  "dependencies": {},
   "devDependencies": {
     "browser-sync": "^2.6.1",
     "browserify": "^9.0.8",
@@ -23,6 +21,7 @@
     "gulp-compass": "^2.0.4",
     "gulp-minify-css": "^1.0.0",
     "gulp-plumber": "^1.0.0",
+    "reveal.js": "^3.0.0",
     "vinyl-source-stream": "^1.1.0"
   }
 }

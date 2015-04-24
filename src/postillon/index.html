@@ -9,6 +9,7 @@
   <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent"/>
   <meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1.0,user-scalable=no"/>
   <link rel="stylesheet" href="css/main.css"/>
+  <link rel="stylesheet" href="css/print/pdf.css" media="print"/>
 </head>
 <body>
 <div class="reveal">
@@ -19,33 +20,12 @@
       <p>Joern Bernhardt</p>
     </section>
 
-    <section id="slide-postillon-overview">
-      <h1 class="overlay">Der Postillon</h1>
-
-      <div class="fragment roll-in desktop-pic" data-background-transition="slide">
-        <img src="img/desktop.png" alt="Der Postillon im Desktop"/>
-      </div>
-      <div class="fragment roll-in mobile-pic" data-background-transition="slide">
-        <img src="img/mobile.png" alt="Der Postillon auf Mobilgeräten"/>
-      </div>
-      <div class="fragment roll-in app-pic" data-background-transition="slide">
-        <img src="img/app.png" alt="Der Postillon Newsticker als App"/>
-      </div>
-
-      <aside class="notes">
-        <ul>
-          <li>2008 online gegangen</li>
-          <li>1 Mann Unternehmen bis 2014</li>
-          <li>> 300.000 Seitenaufrufe pro Tag</li>
-          <li>Blogger.com (Blogspot)</li>
-          <li>Jeden Wochentag min. 1 neuer Artikel</li>
-          <li>Desktop, mobile und App als Bilder im Hintergrund</li>
-        </ul>
-      </aside>
+    <section id="slide-postillon-what">
+      <img class="postillon-logo" src="img/postillon-logo.png" alt="Der Postillon" />
     </section>
 
     <section id="slide-campudus-overview">
-      <h1>Campudus</h1>
+      <img class="heading" src="img/campudus-logo.svg" alt="Campudus" />
 
       <div class="texter">
         <div class="text-wrap">
@@ -60,6 +40,20 @@
           <li>Zwei Produkte, einige Projekte</li>
         </ul>
       </aside>
+    </section>
+
+    <section id="slide-postillon-overview">
+      <h1>Der Postillon</h1>
+
+      <div class="fragment roll-in desktop-pic" data-background-transition="slide">
+        <img src="img/desktop.png" alt="Der Postillon im Desktop"/>
+      </div>
+      <div class="fragment roll-in mobile-pic" data-background-transition="slide">
+        <img src="img/mobile.png" alt="Der Postillon auf Mobilgeräten"/>
+      </div>
+      <div class="fragment roll-in app-pic" data-background-transition="slide">
+        <img src="img/app.png" alt="Der Postillon Newsticker als App"/>
+      </div>
     </section>
 
     <section id="slide-tech-stack">
@@ -81,17 +75,16 @@
     <section id="slide-blogger-tech-stack">
       <h1>Blogger</h1>
 
-      <div>XML Template</div>
-
-      <aside class="notes">
-        <ul>
-          <li>Nur eine Datei</li>
-        </ul>
-      </aside>
+      <ul>
+        <li>Posts</li>
+        <li>Seiten</li>
+        <li>Widgets</li>
+        <li>XML Template</li>
+      </ul>
     </section>
 
     <section id="slide-blogger-pros">
-      <h1>Was kann Blogger?</h1>
+      <h1>Wieso Blogger?</h1>
       <ul>
         <li class="fragment">Kostenlos</li>
         <li class="fragment">Skaliert ohne Probleme</li>
@@ -99,7 +92,6 @@
         <li class="fragment">... hohe Benutzerfreundlichkeit durch Minimierung der Anzahl an Features</li>
         <li class="fragment">... sehr übersichtlich, da man nur in einem Template arbeiten muss</li>
         <li class="fragment">... ist dank vieler Vorgaben sofort betriebsbereit</li>
-        <li class="fragment">... verfolgt Gamification-Ansatz: easy-to-learn, hard-to-master</li>
       </ul>
 
       <aside class="notes">
@@ -115,15 +107,11 @@
       </section>
 
       <section>
-        <h2>Vorlage bearbeiten</h2>
+        <img src="img/edit-template.png" alt="Ausschnitt Vorlage bearbeiten"/>
       </section>
 
       <section>
-        <h2>Layout / Widgets bearbeiten</h2>
-      </section>
-
-      <section>
-        <h2>DEMO</h2>
+        <img src="img/edit-layout-widget.png" alt="Layout / Widget bearbeiten"/>
       </section>
     </section>
 
@@ -171,49 +159,54 @@
       </section>
 
       <section>
-        <h2>Mobile Blogger Stylesheets deaktivieren</h2>
-
-        <div>
-        <pre><code class="html">
-          &amp;lt;span id=&quot;skin-hack&quot;&amp;gt;
-          &amp;lt;style type=&quot;text/css&quot;&amp;gt; /*
-          &lt;b:skin&gt;&lt;![CDATA[ */ ]]&gt;&lt;/b:skin&gt;
-          &amp;lt;/span&amp;gt;
-        </code></pre>
-        </div>
-      </section>
-
-      <section>
-        <h2>Bildgrößen für Facebook und Co anpassen</h2>
-        <pre><code class="html">
-          &lt;meta expr:content='&amp;quot;http://www.eigener-server.de/edit_blogger_thumbnail.php?url=&amp;quot; +
-          data:blog.postImageThumbnailUrl' property='og:image'/&gt;
-          &lt;link expr:href='&amp;quot;http://www.eigener-server.de/edit_blogger_thumbnail.php?url=&amp;quot; +
-          data:blog.postImageThumbnailUrl' rel='image_src'/&gt;
-        </code></pre>
-        <h3>Serverseitiges Skript:</h3>
-        <ol>
-          <li>die URL auf "/s1600/" (größtmögliche Größe) anpassen</li>
-          <li>herunterladen</li>
-          <li>das Ergebnis davon zurückgeben</li>
-          <li>Achtung: Reine Weiterleitung funktioniert nicht bei jedem sozialen Netzwerk.</li>
-        </ol>
-        <p class="fragment">... inzwischen liefert Blogger jedoch gleich größere Bilder, die auch in Facebook okay
-          aussehen. :)</p>
-      </section>
-
-      <section>
-        <h2>Speicherprobleme mit JS?</h2>
+        <h2>Speicherprobleme?</h2>
         <pre><code class="javascript">
-          if (a < b && b > 0) { /* ... */ }
+if (a < b && b > 0) { /* ... */ }
         </code></pre>
       </section>
 
       <section>
         <h2>Ist doch klar:</h2>
         <pre><code class="javascript">
-          if (a &amp;lt; b &amp;amp;&amp;amp; b &amp;gt; 0) { /* ... */ }
+if (a &amp;lt; b &amp;amp;&amp;amp; b &amp;gt; 0) { /* ... */ }
         </code></pre>
+      </section>
+
+      <section>
+        <h2>Mobile Vorgaben deaktivieren</h2>
+
+        <div>
+        <pre><code class="html">
+&amp;lt;span id=&quot;skin-hack&quot;&amp;gt;
+&amp;lt;style type=&quot;text/css&quot;&amp;gt; /*
+&lt;b:skin&gt;&lt;![CDATA[ */ ]]&gt;&lt;/b:skin&gt;
+&amp;lt;/span&amp;gt;
+        </code></pre>
+        </div>
+      </section>
+
+      <section>
+        <h2>Labels im JavaScript nutzen</h2>
+
+        <div>
+        <pre><code class="html">
+&lt;b:if cond='data:blog.pageType == &quot;item&quot;'&gt;
+  &lt;script type='text/javascript'&gt;
+    (function() {
+      var blogLabels = [];
+      &lt;b:loop values='data:post.labels' var='label'&gt;
+      blogLabels.push(&#39;&lt;data:label.name/&gt;&#39;);
+      &lt;/b:loop&gt;
+      doSomethingWithLabels(blogLabels);
+    }());
+  &lt;/script&gt;
+  &lt;b:else/&gt;
+  &lt;script type='text/javascript'&gt;
+    doSomethingWithLabels([]);
+  &lt;/script&gt;
+&lt;/b:if&gt;
+        </code></pre>
+        </div>
       </section>
     </section>
 
@@ -223,12 +216,11 @@
       </section>
 
       <section>
-        <h2>Build-Setup</h2>
+        <h2>Build-Setup macht Sinn</h2>
         <ul>
-          <li>Shell-Skripte</li>
-          <li>Grunt</li>
           <li>Gulp</li>
-          <li>Broccoli</li>
+          <li>Grunt</li>
+          <li>Shell-Skripte</li>
           <li>...</li>
         </ul>
       </section>
@@ -245,10 +237,9 @@
       <section>
         <h2>Skripte für Arbeitserleichterungen</h2>
         <ul>
-          <li class="fragment">Bildergalerie erstellen</li>
-          <li class="fragment">Archivartikel austauschen</li>
-          <li class="fragment">Videos einbinden</li>
-          <li class="fragment">DEMO</li>
+          <li>Bildergalerie erstellen</li>
+          <li>Archivartikel austauschen</li>
+          <li>Videos einbinden</li>
         </ul>
       </section>
     </section>
@@ -257,6 +248,7 @@
       <section>
         <h1>Bonus</h1>
       </section>
+
       <section>
         <h2>Newsticker</h2>
         <ul>
@@ -272,6 +264,7 @@
           </li>
         </ul>
       </section>
+
       <section>
         <h2>Sonstige Learnings</h2>
         <ul>
@@ -281,8 +274,17 @@
         </ul>
       </section>
     </section>
+    <section id="slide-credits">
+      <section>
+        <h1>Dankeschön!</h1>
+        <div>Joern Bernhardt</div>
+        <div><a href="https://twitter.com/NarigoDF">&#64;NarigoDF</a></div>
+        <div><a href="mailto:jb&#64;campudus.com">jb&#64;campudus.com</a></div>
+      </section>
+    </section>
   </div>
 </div>
+<script src="lib/js/head.min.js"></script>
 <script src="js/app.js"></script>
 </body>
 </html>
