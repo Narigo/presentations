@@ -10,6 +10,16 @@ Reveal.addEventListener('slidechanged', function (event) {
   }
 });
 
+var newstickerSlide = require('./slide-newsticker.js');
+
+Reveal.addEventListener('slidechanged', function (event) {
+  if (event.currentSlide.id === 'slide-newsticker') {
+    newstickerSlide.start();
+  } else {
+    newstickerSlide.stop();
+  }
+});
+
 Reveal.initialize({
   controls : true,
   progress : true,
