@@ -21,11 +21,11 @@
     </section>
 
     <section id="slide-postillon-what">
-      <img class="postillon-logo" src="img/postillon-logo.png" alt="Der Postillon" />
+      <img class="postillon-logo" src="img/postillon-logo.png" alt="Der Postillon"/>
     </section>
 
     <section id="slide-campudus-overview">
-      <img class="heading" src="img/campudus-logo.svg" alt="Campudus" />
+      <img class="heading" src="img/campudus-logo.svg" alt="Campudus"/>
 
       <div class="texter">
         <div class="text-wrap">
@@ -160,28 +160,28 @@
 
       <section>
         <h2>Speicherprobleme?</h2>
-        <pre><code class="javascript">
+        <pre><code class="javascript"><!-- @formatter:off -->
 if (a < b && b > 0) { /* ... */ }
-        </code></pre>
+        <!-- @formatter:on --></code></pre>
       </section>
 
       <section>
         <h2>Ist doch klar:</h2>
-        <pre><code class="javascript">
+        <pre><code class="javascript"><!-- @formatter:off -->
 if (a &amp;lt; b &amp;amp;&amp;amp; b &amp;gt; 0) { /* ... */ }
-        </code></pre>
+        <!-- @formatter:on --></code></pre>
       </section>
 
       <section>
         <h2>Mobile Vorgaben deaktivieren</h2>
 
         <div>
-        <pre><code class="html">
+        <pre><code class="html"><!-- @formatter:off -->
 &amp;lt;span id=&quot;skin-hack&quot;&amp;gt;
 &amp;lt;style type=&quot;text/css&quot;&amp;gt; /*
 &lt;b:skin&gt;&lt;![CDATA[ */ ]]&gt;&lt;/b:skin&gt;
 &amp;lt;/span&amp;gt;
-        </code></pre>
+        <!-- @formatter:on --></code></pre>
         </div>
       </section>
 
@@ -189,23 +189,23 @@ if (a &amp;lt; b &amp;amp;&amp;amp; b &amp;gt; 0) { /* ... */ }
         <h2>Labels im JavaScript nutzen</h2>
 
         <div>
-        <pre><code class="html">
+        <pre><code class="html"><!-- @formatter:off -->
 &lt;b:if cond='data:blog.pageType == &quot;item&quot;'&gt;
-  &lt;script type='text/javascript'&gt;
-    (function() {
-      var blogLabels = [];
-      &lt;b:loop values='data:post.labels' var='label'&gt;
-      blogLabels.push(&#39;&lt;data:label.name/&gt;&#39;);
-      &lt;/b:loop&gt;
-      doSomethingWithLabels(blogLabels);
-    }());
-  &lt;/script&gt;
-  &lt;b:else/&gt;
-  &lt;script type='text/javascript'&gt;
-    doSomethingWithLabels([]);
-  &lt;/script&gt;
+&lt;script type='text/javascript'&gt;
+(function() {
+var blogLabels = [];
+&lt;b:loop values='data:post.labels' var='label'&gt;
+blogLabels.push(&#39;&lt;data:label.name/&gt;&#39;);
+&lt;/b:loop&gt;
+doSomethingWithLabels(blogLabels);
+}());
+&lt;/script&gt;
+&lt;b:else/&gt;
+&lt;script type='text/javascript'&gt;
+doSomethingWithLabels([]);
+&lt;/script&gt;
 &lt;/b:if&gt;
-        </code></pre>
+        <!-- @formatter:on --></code></pre>
         </div>
       </section>
     </section>
@@ -270,8 +270,10 @@ if (a &amp;lt; b &amp;amp;&amp;amp; b &amp;gt; 0) { /* ... */ }
           </div>
 
           <div class="ticker next ticker-3">
-            <div class="text-wrap">
-              <div class="text"></div>
+            <div class="ticker-wrap">
+              <div class="text-wrap">
+                <div class="text"></div>
+              </div>
             </div>
 
             <p class="info">(<span class="author"></span> in Newsticker #<span class="number"></span>)</p>
@@ -309,6 +311,7 @@ if (a &amp;lt; b &amp;amp;&amp;amp; b &amp;gt; 0) { /* ... */ }
     <section id="slide-credits">
       <section>
         <h1>Dankeschön!</h1>
+
         <div>Joern Bernhardt</div>
         <div><a href="https://twitter.com/NarigoDF">&#64;NarigoDF</a></div>
         <div><a href="mailto:jb&#64;campudus.com">jb&#64;campudus.com</a></div>

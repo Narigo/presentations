@@ -16,7 +16,6 @@
     }
 
     .text-wrap {
-      padding: 10px;
       display: inline;
       text-align: center;
       line-height: 50px;
@@ -28,6 +27,9 @@
       font-family: monospace;
       display: inline;
       text-align: center;
+      -moz-box-shadow: 8px 0 0 #000000, -8px 0 0 #000000;
+      -webkit-box-shadow: 8px 0 0 #000000, -8px 0 0 #000000;
+      box-shadow: 8px 0 0 #000000, -8px 0 0 #000000;
     }
 
     .info {
