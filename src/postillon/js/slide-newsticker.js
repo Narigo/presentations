@@ -32,7 +32,7 @@ texts[0] = $slide.querySelector('.ticker-1');
 texts[1] = $slide.querySelector('.ticker-2');
 texts[2] = $slide.querySelector('.ticker-3');
 
-var timeout = 5000;
+var timeout = 10000;
 var i = 0;
 var running = false;
 var timer;

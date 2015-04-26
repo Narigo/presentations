@@ -20,8 +20,28 @@
       <p>Joern Bernhardt</p>
     </section>
 
-    <section id="slide-postillon-what">
+    <section id="slide-postillon-overview">
       <img class="postillon-logo" src="img/postillon-logo.png" alt="Der Postillon"/>
+
+      <div class="fragment roll-in current-visible">
+        <img src="img/postillon-screenshot01.png"
+             alt="Linie übertreten: Sprung aus 39 Kilometern Höhe für ungültig erklärt"/>
+      </div>
+
+      <div class="fragment roll-in current-visible">
+        <img src="img/postillon-screenshot02.png"
+             alt="Exklusiv: Ex-Kanzleramtsminister Ronald Pofalla wechselt in den Vorstand der Deutschen Bahn"/>
+      </div>
+
+      <div class="fragment roll-in">
+        <img src="img/postillon-screenshot03.png" alt="Postillon auf allen Kanälen"/>
+      </div>
+
+      <aside class="notes">
+        <ul>
+          <li>Postillon24 wurde auch schon mehrmals im NDR ausgestrahlt</li>
+        </ul>
+      </aside>
     </section>
 
     <section id="slide-campudus-overview">
@@ -30,7 +50,8 @@
       <div class="texter">
         <div class="text-wrap">
           <span class="text active text-1"></span>
-          <span class="text inactive text-2"></span>
+          <span class="text next text-2"></span>
+          <span class="text prev text-3"></span>
         </div>
       </div>
 
@@ -42,7 +63,7 @@
       </aside>
     </section>
 
-    <section id="slide-postillon-overview">
+    <section id="slide-postillon-campudus">
       <h1>Der Postillon</h1>
 
       <div class="fragment roll-in desktop-pic" data-background-transition="slide">
@@ -54,6 +75,31 @@
       <div class="fragment roll-in app-pic" data-background-transition="slide">
         <img src="img/app.png" alt="Der Postillon Newsticker als App"/>
       </div>
+    </section>
+
+    <section id="slide-blogger-tech-stack">
+      <h1>Blogger</h1>
+
+      <ul>
+        <li>Posts</li>
+        <li>Seiten</li>
+        <li>Widgets</li>
+        <li>XML Template</li>
+      </ul>
+    </section>
+
+    <section id="slide-blogger-workflow-theory">
+      <section>
+        <h1>Theoretischer Workflow</h1>
+      </section>
+
+      <section>
+        <img src="img/edit-template.png" alt="Ausschnitt Vorlage bearbeiten"/>
+      </section>
+
+      <section>
+        <img src="img/edit-layout-widget.png" alt="Layout / Widget bearbeiten"/>
+      </section>
     </section>
 
     <section id="slide-tech-stack">
@@ -70,49 +116,6 @@
           <li>Nur eine Datei</li>
         </ul>
       </aside>
-    </section>
-
-    <section id="slide-blogger-tech-stack">
-      <h1>Blogger</h1>
-
-      <ul>
-        <li>Posts</li>
-        <li>Seiten</li>
-        <li>Widgets</li>
-        <li>XML Template</li>
-      </ul>
-    </section>
-
-    <section id="slide-blogger-pros">
-      <h1>Wieso Blogger?</h1>
-      <ul>
-        <li class="fragment">Kostenlos</li>
-        <li class="fragment">Skaliert ohne Probleme</li>
-        <li class="fragment">... hohe Sicherheit durch Einschränkungen der Möglichkeiten</li>
-        <li class="fragment">... hohe Benutzerfreundlichkeit durch Minimierung der Anzahl an Features</li>
-        <li class="fragment">... sehr übersichtlich, da man nur in einem Template arbeiten muss</li>
-        <li class="fragment">... ist dank vieler Vorgaben sofort betriebsbereit</li>
-      </ul>
-
-      <aside class="notes">
-        <ul>
-          <li>Habe ich schon erwähnt, dass es nichts kostet?</li>
-        </ul>
-      </aside>
-    </section>
-
-    <section id="slide-blogger-workflow-theory">
-      <section>
-        <h1>Theoretischer Workflow</h1>
-      </section>
-
-      <section>
-        <img src="img/edit-template.png" alt="Ausschnitt Vorlage bearbeiten"/>
-      </section>
-
-      <section>
-        <img src="img/edit-layout-widget.png" alt="Layout / Widget bearbeiten"/>
-      </section>
     </section>
 
     <section id="slide-blogger-workflow-practice">
@@ -153,6 +156,24 @@
       </section>
     </section>
 
+    <section id="slide-blogger-pros">
+      <h1>Wieso Blogger?</h1>
+      <ul>
+        <li class="fragment">Kostenlos</li>
+        <li class="fragment">Skaliert ohne Probleme</li>
+        <li class="fragment">... hohe Sicherheit durch Einschränkungen der Möglichkeiten</li>
+        <li class="fragment">... hohe Benutzerfreundlichkeit durch Minimierung der Anzahl an Features</li>
+        <li class="fragment">... sehr übersichtlich, da man nur in einem Template arbeiten muss</li>
+        <li class="fragment">... ist dank vieler Vorgaben sofort betriebsbereit</li>
+      </ul>
+
+      <aside class="notes">
+        <ul>
+          <li>Habe ich schon erwähnt, dass es nichts kostet?</li>
+        </ul>
+      </aside>
+    </section>
+
     <section id="slide-blogger-hacks">
       <section>
         <h1>Ein paar Hacks</h1>
@@ -160,37 +181,37 @@
 
       <section>
         <h2>Speicherprobleme?</h2>
-        <pre><code class="javascript"><!-- @formatter:off -->
-if (a < b && b > 0) { /* ... */ }
-        <!-- @formatter:on --></code></pre>
+        <img src="img/blogger-error.png" alt="if (a &lt; b &amp;&amp; b &gt; 0) { /* ... */ }"/>
       </section>
 
       <section>
         <h2>Ist doch klar:</h2>
-        <pre><code class="javascript"><!-- @formatter:off -->
-if (a &amp;lt; b &amp;amp;&amp;amp; b &amp;gt; 0) { /* ... */ }
-        <!-- @formatter:on --></code></pre>
+        <!-- @formatter:off -->
+        <pre><code class="javascript">if (a &amp;lt; b &amp;amp;&amp;amp; b &amp;gt; 0) { /* ... */ }</code></pre>
+        <!-- @formatter:on -->
       </section>
 
       <section>
         <h2>Mobile Vorgaben deaktivieren</h2>
 
         <div>
-        <pre><code class="html"><!-- @formatter:off -->
-&amp;lt;span id=&quot;skin-hack&quot;&amp;gt;
+          <!-- @formatter:off -->
+          <pre><code class="html">&amp;lt;span id=&quot;skin-hack&quot;&amp;gt;
 &amp;lt;style type=&quot;text/css&quot;&amp;gt; /*
 &lt;b:skin&gt;&lt;![CDATA[ */ ]]&gt;&lt;/b:skin&gt;
-&amp;lt;/span&amp;gt;
-        <!-- @formatter:on --></code></pre>
+&amp;lt;/span&amp;gt;</code></pre>
+          <!-- @formatter:on -->
         </div>
       </section>
 
-      <section>
+      <section id="slide-labels-in-js">
         <h2>Labels im JavaScript nutzen</h2>
 
-        <div>
-        <pre><code class="html"><!-- @formatter:off -->
-&lt;b:if cond='data:blog.pageType == &quot;item&quot;'&gt;
+        <iframe class="fragment current-visible"
+                src="http://www.der-postillon.com/2012/06/youporn-erhalt-grimme-online-award-2012.html?m=1"></iframe>
+        <div class="fragment">
+          <!-- @formatter:off -->
+          <pre><code class="html">&lt;b:if cond='data:blog.pageType == &quot;item&quot;'&gt;
 &lt;script type='text/javascript'&gt;
 (function() {
 var blogLabels = [];
@@ -204,8 +225,8 @@ doSomethingWithLabels(blogLabels);
 &lt;script type='text/javascript'&gt;
 doSomethingWithLabels([]);
 &lt;/script&gt;
-&lt;/b:if&gt;
-        <!-- @formatter:on --></code></pre>
+&lt;/b:if&gt;</code></pre>
+          <!-- @formatter:on -->
         </div>
       </section>
     </section>
@@ -227,20 +248,20 @@ doSomethingWithLabels([]);
 
       <section>
         <h2>Aufspalten der Mobil- und Desktop-Styles</h2>
-        <ol>
-          <li class="fragment">Ein CSS für Desktopansicht</li>
-          <li class="fragment">Ein CSS für mobile Ansicht</li>
-          <li class="fragment">Ein CSS für beide</li>
-        </ol>
+        <ul class="fragment">
+          <li>Ein CSS für Desktopansicht</li>
+          <li>Ein CSS für mobile Ansicht</li>
+          <li>Ein CSS für beide</li>
+        </ul>
       </section>
 
       <section>
-        <h2>Skripte für Arbeitserleichterungen</h2>
-        <ul>
-          <li>Bildergalerie erstellen</li>
-          <li>Archivartikel austauschen</li>
-          <li>Videos einbinden</li>
-        </ul>
+        <h2>Skripte...</h2>
+        <ol>
+          <li class="fragment">Bildergalerie erstellen</li>
+          <li class="fragment">Archivartikel austauschen</li>
+          <li class="fragment">Videos einbinden</li>
+        </ol>
       </section>
     </section>
 

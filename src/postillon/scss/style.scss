@@ -15,5 +15,5 @@
     @include box-shadow(#fff 0 0 15px 15px);
   }
 
-  @import "slide-campudus-overview", "slide-postillon-overview", "slide-newsticker";
+  @import "slide-postillon-overview", "slide-campudus-overview", "slide-postillon-campudus", "slide-labels-in-js", "slide-newsticker";
 }

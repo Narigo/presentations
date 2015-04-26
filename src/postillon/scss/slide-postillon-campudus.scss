@@ -1,0 +1,30 @@
+#slide-postillon-campudus {
+  height: 100%;
+  width: 100%;
+
+  img {
+    display: block;
+  }
+
+  .desktop-pic {
+    position: absolute;
+    right: 50%;
+    max-width: 50%;
+    bottom: 0;
+  }
+
+  .mobile-pic {
+    position: absolute;
+    left: 60%;
+    max-width: 40%;
+    bottom: 0;
+  }
+
+  .app-pic {
+    position: absolute;
+    right: 0;
+    max-width: 40%;
+    top: 0;
+  }
+
+}

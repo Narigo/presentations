@@ -1,0 +1,16 @@
+#slide-labels-in-js {
+
+  width: 100%;
+  height: 100%;
+
+  .fragment {
+    position: absolute;
+    left: 0;
+    right: 0;
+    margin: 0 auto;
+    text-align: center;
+    width: 100%;
+    min-height: 500px;
+  }
+
+}

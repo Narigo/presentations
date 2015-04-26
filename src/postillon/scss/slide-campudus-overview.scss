@@ -22,11 +22,17 @@
     }
 
     .active {
-      @include transform(translate(0, 0px));
+      @include transition(all 100ms ease-out);
+      @include transform(translate(0, 0));
       @include opacity(1);
     }
 
-    .inactive {
+    .next {
+      @include transform(translate(0, -50px));
+      @include opacity(0);
+    }
+
+    .prev {
       @include transition(all 500ms ease-out);
       @include transform(translate(0, 50px));
       @include opacity(0);
