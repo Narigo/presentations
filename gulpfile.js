@@ -33,6 +33,9 @@ function assetCopy(cb) {
       '!src/' + name + '/scss/**'])
       .pipe(gulp.dest('out/' + name));
   });
+  assetStreams.push(gulp.src(['src/*'].concat(projects.map(function (name) {
+    return '!src/' + name + '/**';
+  }))).pipe(gulp.dest('out/')));
 
   es.merge.apply(null, assetStreams)
     .on('end', cb);
