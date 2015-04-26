@@ -1,2 +1,12 @@
-@import "../../../node_modules/reveal/css/reveal.css";
-@import "../../../node_modules/reveal/css/theme/league.css";
+@import "../../../node_modules/reveal.js/css/reveal.css";
+@import "../../../node_modules/reveal.js/css/theme/league.css";
+
+@import url(http://fonts.googleapis.com/css?family=Droid+Serif:400italic,700italic);
+
+.slides {
+  blockquote {
+    font-family: 'Droid Serif', serif;
+    padding: 20px;
+    width: 100%;
+  }
+}
