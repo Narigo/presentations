@@ -3,28 +3,27 @@
   width: 100%;
 
   img {
-    display: block;
+    display: inline-block;
+    border: 0;
+    background: none;
+    @include box-shadow(0px 0px 0px #000);
   }
 
   .desktop-pic {
     position: absolute;
-    right: 50%;
-    max-width: 50%;
-    bottom: 0;
+    margin: 0 auto;
   }
 
   .mobile-pic {
-    position: absolute;
-    left: 60%;
-    max-width: 40%;
+    float: left;
+    left: 0;
     bottom: 0;
   }
 
   .app-pic {
-    position: absolute;
+    float: right;
     right: 0;
-    max-width: 40%;
-    top: 0;
+    bottom: 0;
   }
 
 }

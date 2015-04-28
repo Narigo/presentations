@@ -42,8 +42,7 @@ function next() {
   var current = i % 3;
   var nextTicker = i % ticker.length;
   texts[current].querySelector('.text').innerHTML = '++++ ' + ticker[nextTicker].text + ' ++++';
-  texts[current].querySelector('.author').innerHTML = ticker[nextTicker].author;
-  texts[current].querySelector('.number').innerHTML = ticker[nextTicker].nr;
+  texts[current].querySelector('.info').innerHTML = '(' + ticker[nextTicker].author + ' in Newsticker #' + ticker[nextTicker].nr + ')';
   texts[current].classList.add('prev');
   texts[current].classList.remove('next');
   texts[current].classList.remove('active');

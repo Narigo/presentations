@@ -1,0 +1,21 @@
+#slide-tech-stack {
+
+  margin: 0;
+  padding: 0;
+  height: 100%;
+
+  .stack {
+    position: absolute;
+    text-align: center;
+    height: 100%;
+    width: 100%;
+
+    img {
+      border: 0;
+      background: none;
+      @include box-shadow(0 0 0);
+    }
+
+  }
+
+}
