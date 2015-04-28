@@ -12,18 +12,23 @@
   .desktop-pic {
     position: absolute;
     margin: 0 auto;
+    left: 50%;
+    max-width: 70%;
+    margin-left: -35%;
   }
 
   .mobile-pic {
     float: left;
     left: 0;
     bottom: 0;
+    max-width: 25%;
   }
 
   .app-pic {
     float: right;
     right: 0;
     bottom: 0;
+    max-width: 25%;
   }
 
 }
