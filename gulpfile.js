@@ -1,4 +1,5 @@
 var gulp = require('gulp');
+var gutil = require('gulp-util');
 
 var Path = require('path');
 var compass = require('gulp-compass');
@@ -12,15 +13,15 @@ var reload = browserSync.reload;
 var source = require('vinyl-source-stream');
 var es = require('event-stream');
 
-gulp.task('sass', sassCompile);
 gulp.task('assets', assetCopy);
+gulp.task('sass', sassCompile);
 gulp.task('scripts', scriptCompile);
 gulp.task('clean', clean);
 
 gulp.task('reloader', ['build'], reload);
 gulp.task('dev', ['build'], server);
 
-gulp.task('build', ['sass', 'assets', 'scripts']);
+gulp.task('build', ['assets', 'sass', 'scripts']);
 gulp.task('default', ['build']);
 
 var projects = [
@@ -46,13 +47,14 @@ function sassCompile(cb) {
     return gulp.src('src/' + name + '/scss/main.scss')
       .pipe(plumber({
         errorHandler : function (error) {
-          console.log(error.message);
+          gutil.log('error while looking at project ' + name);
+          gutil.log(error.message);
           this.emit('end');
         }
       }))
       .pipe(compass({
         project : Path.join(__dirname),
-        css : 'out/tmp-css',
+        css : 'out/tmp-css/' + name,
         sass : 'src/' + name + '/scss',
         image : 'src/' + name + '/img'
       }))
