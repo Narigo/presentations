@@ -11,9 +11,8 @@
 
   .desktop-pic {
     position: absolute;
-    margin: 0 auto;
     left: 50%;
-    max-width: 70%;
+    width: 70%;
     margin-left: -35%;
   }
 
@@ -28,7 +27,14 @@
     float: right;
     right: 0;
     bottom: 0;
-    max-width: 25%;
+    width: 25%;
+  }
+
+  .app-award-pic {
+    position: absolute;
+    right: -5%;
+    top: 18%;
+    width: 20%;
   }
 
 }

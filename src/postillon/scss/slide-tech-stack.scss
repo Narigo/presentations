@@ -1,3 +1,5 @@
+@import "compass/css3";
+
 #slide-tech-stack {
 
   margin: 0;
@@ -5,7 +7,6 @@
   height: 100%;
 
   .stack {
-    background-color: #fff;
     position: absolute;
     text-align: center;
     height: 100%;
@@ -13,7 +14,7 @@
 
     img {
       border: 0;
-      background: none;
+      background: #fff;
       @include box-shadow(0 0 0);
     }
 
