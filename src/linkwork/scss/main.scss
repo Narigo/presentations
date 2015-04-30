@@ -1,12 +1,11 @@
-@import "../../../node_modules/reveal.js/css/reveal.css";
-@import "../../../node_modules/reveal.js/css/theme/league.css";
-
-@import url(http://fonts.googleapis.com/css?family=Droid+Serif:400italic,700italic);
+@import "../../lib/scss/reveal-campudus";
+@import "compass/css3";
 
 .slides {
-  blockquote {
-    font-family: 'Droid Serif', serif;
-    padding: 20px;
+  section img {
     width: 100%;
+    height: auto;
+    border: 0;
+    @include box-shadow(0 0 0);
   }
 }

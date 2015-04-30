@@ -14,7 +14,7 @@ var source = require('vinyl-source-stream');
 var es = require('event-stream');
 
 gulp.task('assets', assetCopy);
-gulp.task('sass', sassCompile);
+gulp.task('sass', ['assets'], sassCompile);
 gulp.task('scripts', scriptCompile);
 gulp.task('clean', clean);
 
@@ -29,14 +29,15 @@ var projects = [
 ];
 
 function assetCopy(cb) {
-  var assetStreams = projects.map(function (name) {
+  var assetStreams = [];
+  assetStreams.push(gulp.src(['src/**'].concat(projects.map(function (name) {
+    return '!src/' + name + '/**';
+  }))).pipe(gulp.dest('out/')));
+  assetStreams.concat(projects.map(function (name) {
     return gulp.src(['src/' + name + '/**', '!src/' + name + '/js/**', '!src/' + name + '/scss',
       '!src/' + name + '/scss/**'])
       .pipe(gulp.dest('out/' + name));
-  });
-  assetStreams.push(gulp.src(['src/*'].concat(projects.map(function (name) {
-    return '!src/' + name + '/**';
-  }))).pipe(gulp.dest('out/')));
+  }));
 
   es.merge.apply(null, assetStreams)
     .on('end', cb);
@@ -56,7 +57,15 @@ function sassCompile(cb) {
         project : Path.join(__dirname),
         css : 'out/tmp-css/' + name,
         sass : 'src/' + name + '/scss',
-        image : 'src/' + name + '/img'
+        image : 'src/' + name + '/img',
+        font : 'src/lib/font'
+      }))
+      .pipe(plumber({
+        errorHandler : function (error) {
+          gutil.log('error in minification while looking at project ' + name);
+          gutil.log(error.message);
+          this.emit('end');
+        }
       }))
       .pipe(minifyCss())
       .pipe(gulp.dest('out/' + name + '/css/'));

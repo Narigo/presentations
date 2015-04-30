@@ -8,6 +8,7 @@
 
 
 // Default mixins and settings -----------------
+@import "reveal";
 @import "mixins";
 @import "settings";
 // ---------------------------------------------
@@ -15,7 +16,7 @@
 
 
 // Include theme-specific fonts
-@import url(../lib/font/source_sans_pro/source_sans_pro.css);
+@import url(../../lib/font/source_sans_pro/source_sans_pro.css);
 
 // Override theme settings (see ../template/settings.scss)
 $headingTextShadow: 0;
