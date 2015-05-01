@@ -1,0 +1,41 @@
+@import "compass/css3";
+
+#slide-campudus-overview {
+  width: 100%;
+
+  .texter {
+    position: relative;
+    overflow: hidden;
+    height: 50px;
+    width: 100%;
+
+    .text-wrap {
+      width: 100%;
+    }
+
+    .text {
+      position: absolute;
+      text-align: center;
+      height: 50px;
+      left: 0;
+      right: 0;
+    }
+
+    .active {
+      @include transition(all 100ms ease-out);
+      @include transform(translate(0, 0));
+      @include opacity(1);
+    }
+
+    .next {
+      @include transform(translate(0, -50px));
+      @include opacity(0);
+    }
+
+    .prev {
+      @include transition(all 500ms ease-out);
+      @include transform(translate(0, 50px));
+      @include opacity(0);
+    }
+  }
+}

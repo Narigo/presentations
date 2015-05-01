@@ -25,7 +25,7 @@ gulp.task('build', ['assets', 'sass', 'scripts']);
 gulp.task('default', ['build']);
 
 var projects = [
-  'linkwork', 'postillon'
+  'campudus-3', 'linkwork', 'postillon'
 ];
 
 function assetCopy(cb) {
@@ -98,7 +98,7 @@ function server() {
     }
   });
 
-  gulp.watch(['src/*/**'], {}, ['reloader']);
+  gulp.watch(['src/**'], {}, ['reloader']);
 }
 
 function clean(cb) {

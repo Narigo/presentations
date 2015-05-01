@@ -1,0 +1,82 @@
+#slide-campudus-portfolio {
+  height: 100%;
+
+  .row {
+    width: 100%;
+    height: 30%;
+    display: flex;
+    flex-direction: row;
+    margin: 0 auto;
+    justify-content: space-between;
+
+    &.last {
+      height: 10%;
+    }
+
+    .cell {
+      display: inline-block;
+      width: 30%;
+      height: 100%;
+      overflow: hidden;
+      position: relative;
+
+      .image {
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+      }
+
+      h2 {
+        position: absolute;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        text-align: center;
+        font-size: 1em;
+        padding: 5px;
+        color: #fff;
+        background-color: rgba(0, 0, 0, 0.7);
+        z-index: 5;
+      }
+
+      img {
+        border: 0;
+        @include box-shadow(0 0 0);
+        max-height: 100%;
+        max-width: 100%;
+      }
+
+      .active {
+        @include transition(all 200ms ease-out);
+        @include transform(translate(0, 0));
+        @include opacity(1);
+      }
+
+      .next {
+        @include transform(translate(-100%, 0));
+        @include opacity(0);
+      }
+
+      .prev {
+        @include transition(all 200ms ease-out);
+        @include transform(translate(100%, 0));
+        @include opacity(0);
+      }
+    }
+
+    .cell-3 {
+      width: 100%;
+      height: auto;
+      margin: 0 auto;
+
+      h2 {
+        font-size: 1.5em;
+        letter-spacing: 1em;
+        padding-left: 1em;
+        background-color: #fff;
+      }
+    }
+  }
+}
