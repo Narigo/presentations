@@ -4,7 +4,7 @@ var running = false;
 var timeout = 900;
 var timer;
 var images = [
-  {name : 'aeoxdesign', count : 3, idx : -1},
+  {name : 'showroom', count : 3, idx : -1},
   {name : 'datengut', count : 4, idx : -1},
   {name : 'dealercenter', count : 7, idx : -1},
   {name : 'gamegorilla', count : 4, idx : -1},
