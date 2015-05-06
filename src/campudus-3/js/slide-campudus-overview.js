@@ -1,5 +1,5 @@
-var adj = [ 'attraktiven', 'beliebten', 'bescheidenen', 'coolen', 'epischen', 'erfahrenen', 'fröhlichen', 'guten', 'gnädigen', 'humorvollen', 'kaputten', 'klaustrophobischen', 'liebevollen', 'multidimensionalen', 'prämierten', 'tollen', 'verdorbenen', 'vergnügten', 'verschrobenen', 'zauberhaften' ];
-var sub = [ 'Designer', 'Freunde', 'Gorillas', 'Helden', 'Jungs', 'Kids', 'Kellerkinder', 'Knacker', 'Kollegen', 'Krieger', 'Männer', 'Nerds', 'Ninjas', 'Opas', 'Roboter', 'Tiere', 'Typen', 'Programmierer', 'Zauberer', 'Zebras' ];
+var adj = [ 'beliebten', 'bescheidenen', 'coolen', 'epischen', 'erfahrenen', 'fröhlichen', 'guten', 'humorvollen', 'liebevollen', 'prämierten', 'tollen', 'vergnügten' ];
+var sub = [ 'Designer', 'Helden', 'Kollegen', 'Krieger', 'Nerds', 'Ninjas', 'Roboter', 'Typen', 'Programmierer' ];
 
 var $slide = document.getElementById('slide-campudus-overview');
 var texts = [];
