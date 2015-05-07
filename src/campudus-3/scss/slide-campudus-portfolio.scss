@@ -37,7 +37,8 @@
         font-size: 1em;
         padding: 5px;
         color: #fff;
-        background-color: rgba(0, 0, 0, 0.7);
+        margin: 0;
+        background-color: #006eb4;
         z-index: 5;
       }
 
@@ -72,8 +73,8 @@
       margin: 0 auto;
 
       h2 {
-        font-size: 1.5em;
-        letter-spacing: 0.2em;
+        margin-top: 0.5em;
+        font-size: 1em;
         padding-left: 1em;
         background-color: #fff;
       }
