@@ -1,0 +1,88 @@
+*, *:before, *:after{
+  box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+}
+
+div.cube {
+  position: absolute;
+  height: 40px;
+  width: 40px;
+  top: 102px;
+  left: 0;
+  background-color: $streamCubeColor;
+  transition: left 2s ease-in-out;
+
+  &.circle {
+    border-radius: 100px;
+  }
+
+  &.pacman {
+    height: 0px;
+    width: 0px;
+    background-color: transparent;
+    border-top: 21px solid $streamCubeColor;
+    border-left: 21px solid $streamCubeColor;
+    border-right: 21px solid transparent;
+    border-bottom: 21px solid $streamCubeColor;
+  }
+
+  &.read {
+    left: 204px;
+  }
+
+  &.t1 {
+    left: 454px;
+  }
+
+  &.t2 {
+    left: 704px;
+  }
+
+  &.write {
+    left: 854px;
+  }
+}
+
+div.readstream {
+  margin-left: 100px;
+  position: relative;
+  height: 200px;
+  width: 0px;
+  margin-right: 50px;
+  border-top: 60px solid transparent;
+  border-left: 100px solid #428bca;
+  border-bottom: 60px solid transparent;
+  float:left;
+}
+
+div.transformstream {
+  position: relative;
+  height: 80px;
+  width: 200px;
+  top: 60px;
+  background-color: #428BCA;
+  float:left;
+  margin-right: 50px;
+}
+
+div.writestream {
+  position: relative;
+  width: 100px;
+  float:left;
+  top: 60px;
+  border-top: 41px solid #428bca;
+  border-bottom: 41px solid #428bca;
+  border-right: 25px solid transparent;
+}
+
+div.stream_example {
+  clear:both;
+  padding-top: 50px;
+  padding-bottom: 50px;
+
+  span {
+    width: 220px;
+    display: inline-block;
+  }
+}

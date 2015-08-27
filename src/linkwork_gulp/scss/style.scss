@@ -1,0 +1,12 @@
+.reveal .slides {
+
+  font-family: "Source Sans Pro", "Lucida Grande", "Lucida Sans", sans-serif;
+  font-weight: 300;
+
+  img.heading {
+    border: 0;
+    background: none;
+    @include box-shadow(none);
+  }
+
+}

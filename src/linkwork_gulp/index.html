@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+  <meta charset="UTF-8"/>
+  <title>Der Postillon und seine Technik</title>
+  <meta name="description" content="Vorstellung der Technik hinter dem Postillon"/>
+  <meta name="author" content="Joern Bernhardt"/>
+  <meta name="apple-mobile-web-app-capable" content="yes"/>
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent"/>
+  <meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1.0,user-scalable=no"/>
+  <link rel="stylesheet" href="css/main.css"/>
+  <link rel="stylesheet" href="css/print/pdf.css" media="print"/>
+</head>
+<body>
+<div class="reveal">
+  <div class="slides">
+    <section>
+      <h2>Moderne Webentwicklung mit JavaScript</h2>
+
+      <p>Max Stemplinger</p>
+    </section>
+
+    <section id="slide-campudus-overview">
+      <img class="heading" src="img/campudus-logo.svg" alt="Campudus"/>
+
+      <div class="texter">
+        <div class="text-wrap">
+          <span class="text active text-1"></span>
+          <span class="text next text-2"></span>
+          <span class="text prev text-3"></span>
+        </div>
+      </div>
+
+      <aside class="notes">
+        <ul>
+          <li>Web- und App-Entwicklung</li>
+          <li>Zwei Produkte, einige Projekte</li>
+        </ul>
+      </aside>
+    </section>
+
+    <section id="slide-agenda">
+      <h1>Agenda</h1>
+      <ul>
+        <li>Moderne Webentwicklung</li>
+        <li>Streams</li>
+        <li>Gulp</li>
+        <li>Live Coding</li>
+      </ul>
+    </section>
+
+    <section id="moderne-webentwicklung">
+      <h2>Moderne Webentwicklung</h2>
+      <ul>
+        <li class="fragment">Worum es in diesem Talk <strong>nicht</strong> geht:</li>
+        <p class="fragment">Wie baue ich eine mega-hipster Webseite?</p>
+        <li class="fragment">Worum es in diesem Talk geht:</li>
+        <p class="fragment">Welche <strong>Tools</strong> kann ich nutzen, um effizient eine mega-hipster Webseite zu
+          bauen?</p>
+      </ul>
+    </section>
+
+    <section id="slide-streams1">
+      <h1>Streams</h1>
+      <q>"We should have some ways of connecting programs like garden hose--screw in
+        another segment when it becomes necessary to massage data in
+        another way. This is the way of IO also."</q>
+
+      <p>Doug McIlroy. October 11, 1964</p>
+    </section>
+
+    <section id="slide-streams2">
+      <div class="cube"></div>
+      <div class="readstream"></div>
+      <div class="transformstream"></div>
+      <div class="transformstream"></div>
+      <div class="writestream"></div>
+      <div class="fragment stream_example">
+        <span>cat foo.txt</span> |
+        <span>grep bar</span> |
+        <span>sort</span> >
+        <span>bar.txt</span>
+      </div>
+      <div class="fragment">
+        <a href="https://github.com/substack/stream-handbook" target="_blank">https://github.com/substack/stream-handbook</a>
+      </div>
+    </section>
+
+    <section id="gulp">
+      <h1>Gulp</h1>
+      <img src="img/gulp.png" alt="Gulp"/>
+    </section>
+
+    <section id="why-gulp">
+      <h2>Wofür Gulp?</h2>
+      <ul>
+        <p class="fragment">Automatisierung von Aufgaben</p>
+        <li class="fragment">Im Web-Frontend Bereich z.B.
+          <ul>
+            <li>Compilation (CoffeScript, SASS, LESS..)</li>
+            <li>Minification (JS, CSS)</li>
+            <li>Concatenation</li>
+          </ul>
+        </li>
+      </ul>
+    </section>
+
+    <section id="why-gulp2">
+      <h2>Warum Gulp?</h2>
+      <ul class="fragment">
+        <li>Kleine einfache API</li>
+        <li>Auf Streams basierend</li>
+        <li>Auf maximale Nebenläufigkeit ausgerichtet</li>
+        <li>Code over configuration</li>
+      </ul>
+    </section>
+
+    <section id="gulp-api">
+      <h2>Die Gulp API</h2>
+      <ul>
+        <li>gulp.task(name[, deps], fn)</li>
+        <li>gulp.src(globs)</li>
+        <li>gulp.dest(path)</li>
+        <li>gulp.watch(glob[, opts], tasks)</li>
+        <li>gulp.run(tasks...)</li>
+      </ul>
+    </section>
+
+    <section id="gulp-stream">
+      <div class="file"></div>
+      <div class="readstream"></div>
+      <div class="transformstream"></div>
+      <div class="transformstream"></div>
+      <div class="writestream"></div>
+      <div class="stream_example">
+        <span>gulp.src</span>|
+        <span>concat</span>|
+        <span>uglify</span>|
+        <span>gulp.dest</span>
+      </div>
+    </section>
+
+    <section>
+      <h2>Yay!</h2>
+
+      <h3>Jetzt sind wir alle Gulp Experten</h3>
+    </section>
+
+    <section id="slide-live-coding">
+      <h1>Live Coding</h1>
+    </section>
+
+    <section id="slide-credits">
+      <h1>Dankeschön!</h1>
+
+      <div>Max Stemplinger</div>
+      <div><a href="mailto:ms&#64;campudus.com">ms&#64;campudus.com</a></div>
+      <br />
+      <div>
+        <a href="https://github.com/substack/stream-handbook" target="_blank">https://github.com/substack/stream-handbook</a>
+        <a href="https://github.com/campudus/linkwork-gulp" target="_blank">https://github.com/campudus/linkwork-gulp</a>
+      </div>
+    </section>
+  </div>
+</div>
+<script src="lib/js/head.min.js"></script>
+<script src="js/app.js"></script>
+</body>
+</html>
