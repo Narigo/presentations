@@ -11,9 +11,12 @@ var plumber = require('gulp-plumber');
 var browserSync = require('browser-sync');
 var reload = browserSync.reload;
 var source = require('vinyl-source-stream');
+var transform = require('vinyl-transform');
+var inject = require('gulp-inject');
 var es = require('event-stream');
 
-gulp.task('assets', assetCopy);
+gulp.task('index', buildIndex);
+gulp.task('assets', ['index'], assetCopy);
 gulp.task('sass', ['assets'], sassCompile);
 gulp.task('scripts', scriptCompile);
 gulp.task('clean', clean);
@@ -24,28 +27,41 @@ gulp.task('dev', ['build'], server);
 gulp.task('build', ['assets', 'sass', 'scripts']);
 gulp.task('default', ['build']);
 
-var projects = [
-  'campudus-3', 'linkwork', 'postillon'
-];
+var projects = fs.readdirSync('src/presentations');
 
-function assetCopy(cb) {
-  var assetStreams = [];
-  assetStreams.push(gulp.src(['src/**'].concat(projects.map(function (name) {
-    return '!src/' + name + '/**';
-  }))).pipe(gulp.dest('out/')));
-  assetStreams.concat(projects.map(function (name) {
-    return gulp.src(['src/' + name + '/**', '!src/' + name + '/js/**', '!src/' + name + '/scss',
-      '!src/' + name + '/scss/**'])
-      .pipe(gulp.dest('out/' + name));
-  }));
+function buildIndex() {
+  return gulp.src('src/index.html')
+    .pipe(inject(gulp.src('src/presentations/*'), {
+      starttag : '<!-- inject:presentations -->',
+      transform : function (filePath, file) {
+        // return file contents as string
+        console.log(nameFromPath(file.relative) + ' --- ' + file.relative);
+        return '<li><a href="presentations/' + file.relative + '">' + nameFromPath(file.relative) + '</a></li>';
+      }
+    }))
+    .pipe(gulp.dest('out/'));
 
-  es.merge.apply(null, assetStreams)
-    .on('end', cb);
+  function nameFromPath(dirName) {
+    return dirName.replace(/-/g, ' ').replace(/\b(\w)(\w+)\b/g,
+      function (match, firstLetter, word) {
+        return firstLetter.toUpperCase() + word;
+      });
+  }
+}
+
+function assetCopy() {
+  return gulp.src([
+    'src/**',
+    '!src/index.html',
+    '!src/presentations/*/js/**',
+    '!src/presentations/*/scss',
+    '!src/presentations/*/scss/**'])
+    .pipe(gulp.dest('out/'));
 }
 
 function sassCompile(cb) {
   var sassStreams = projects.map(function (name) {
-    return gulp.src('src/' + name + '/scss/main.scss')
+    return gulp.src('src/presentations/' + name + '/scss/main.scss')
       .pipe(plumber({
         errorHandler : function (error) {
           gutil.log('error while looking at project ' + name);
@@ -56,8 +72,8 @@ function sassCompile(cb) {
       .pipe(compass({
         project : Path.join(__dirname),
         css : 'out/tmp-css/' + name,
-        sass : 'src/' + name + '/scss',
-        image : 'src/' + name + '/img',
+        sass : 'src/presentations/' + name + '/scss',
+        image : 'src/presentations/' + name + '/img',
         font : 'src/lib/font'
       }))
       .pipe(plumber({
@@ -68,7 +84,7 @@ function sassCompile(cb) {
         }
       }))
       .pipe(minifyCss())
-      .pipe(gulp.dest('out/' + name + '/css/'));
+      .pipe(gulp.dest('out/presentations/' + name + '/css/'));
   });
 
   es.merge.apply(null, sassStreams)
@@ -77,14 +93,14 @@ function sassCompile(cb) {
 
 function scriptCompile(cb) {
   var scriptStreams = projects.map(function (name) {
-    return browserify('./src/' + name + '/js/app.js')
+    return browserify('./src/presentations/' + name + '/js/app.js')
       .bundle()
       .on('error', function (err) {
         console.log('error', err);
         this.emit('end');
       })
       .pipe(source('app.js'))
-      .pipe(gulp.dest('out/' + name + '/js/'));
+      .pipe(gulp.dest('out/presentations/' + name + '/js/'));
   });
 
   es.merge.apply(null, scriptStreams)
