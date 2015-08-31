@@ -7,6 +7,7 @@ var minifyCss = require('gulp-minify-css');
 var del = require('del');
 var fs = require('fs');
 var browserify = require('browserify');
+var ghPages = require('gulp-gh-pages');
 var plumber = require('gulp-plumber');
 var browserSync = require('browser-sync');
 var reload = browserSync.reload;
@@ -25,9 +26,12 @@ gulp.task('reloader', ['build'], reload);
 gulp.task('dev', ['build'], server);
 
 gulp.task('build', ['assets', 'sass', 'scripts']);
+gulp.task('deploy', ['build'], deployGhPages);
 gulp.task('default', ['build']);
 
 var projects = fs.readdirSync('src/presentations');
+var outDir = 'out';
+var ghPagesDir = '.tmp/publish';
 
 function buildIndex() {
   return gulp.src('src/index.html')
@@ -35,11 +39,10 @@ function buildIndex() {
       starttag : '<!-- inject:presentations -->',
       transform : function (filePath, file) {
         // return file contents as string
-        console.log(nameFromPath(file.relative) + ' --- ' + file.relative);
         return '<li><a href="presentations/' + file.relative + '">' + nameFromPath(file.relative) + '</a></li>';
       }
     }))
-    .pipe(gulp.dest('out/'));
+    .pipe(gulp.dest(outDir));
 
   function nameFromPath(dirName) {
     return dirName.replace(/-/g, ' ').replace(/\b(\w)(\w+)\b/g,
@@ -56,7 +59,7 @@ function assetCopy() {
     '!src/presentations/*/js/**',
     '!src/presentations/*/scss',
     '!src/presentations/*/scss/**'])
-    .pipe(gulp.dest('out/'));
+    .pipe(gulp.dest(outDir));
 }
 
 function sassCompile(cb) {
@@ -71,7 +74,7 @@ function sassCompile(cb) {
       }))
       .pipe(compass({
         project : Path.join(__dirname),
-        css : 'out/tmp-css/' + name,
+        css : '.tmp/css/' + name,
         sass : 'src/presentations/' + name + '/scss',
         image : 'src/presentations/' + name + '/img',
         font : 'src/lib/font'
@@ -84,7 +87,7 @@ function sassCompile(cb) {
         }
       }))
       .pipe(minifyCss())
-      .pipe(gulp.dest('out/presentations/' + name + '/css/'));
+      .pipe(gulp.dest(outDir + '/presentations/' + name + '/css/'));
   });
 
   es.merge.apply(null, sassStreams)
@@ -100,7 +103,7 @@ function scriptCompile(cb) {
         this.emit('end');
       })
       .pipe(source('app.js'))
-      .pipe(gulp.dest('out/presentations/' + name + '/js/'));
+      .pipe(gulp.dest(outDir + '/presentations/' + name + '/js/'));
   });
 
   es.merge.apply(null, scriptStreams)
@@ -110,13 +113,20 @@ function scriptCompile(cb) {
 function server() {
   browserSync({
     server : {
-      baseDir : 'out'
+      baseDir : outDir
     }
   });
 
   gulp.watch(['src/**'], {}, ['reloader']);
 }
 
+function deployGhPages() {
+  return gulp.src(outDir + '/**')
+    .pipe(ghPages({
+      cacheDir : ghPagesDir
+    }));
+}
+
 function clean(cb) {
-  del(['out/'], cb);
+  del([outDir, ghPagesDir], cb);
 }
