@@ -34,10 +34,11 @@ var outDir = 'out';
 var ghPagesDir = '.tmp/publish';
 
 function buildIndex() {
-  return gulp.src('src/index.html')
+  return gulp
+    .src('src/index.html')
     .pipe(inject(gulp.src('src/presentations/*'), {
-      starttag : '<!-- inject:presentations -->',
-      transform : function (filePath, file) {
+      starttag: '<!-- inject:presentations -->',
+      transform: function (filePath, file) {
         // return file contents as string
         return '<li><a href="presentations/' + file.relative + '">' + nameFromPath(file.relative) + '</a></li>';
       }
@@ -53,34 +54,37 @@ function buildIndex() {
 }
 
 function assetCopy() {
-  return gulp.src([
-    'src/**',
-    '!src/index.html',
-    '!src/presentations/*/js/**',
-    '!src/presentations/*/scss',
-    '!src/presentations/*/scss/**'])
+  return gulp
+    .src([
+      'src/**',
+      '!src/index.html',
+      '!src/presentations/*/js/**',
+      '!src/presentations/*/scss',
+      '!src/presentations/*/scss/**'
+    ])
     .pipe(gulp.dest(outDir));
 }
 
 function sassCompile(cb) {
   var sassStreams = projects.map(function (name) {
-    return gulp.src('src/presentations/' + name + '/scss/main.scss')
+    return gulp
+      .src('src/presentations/' + name + '/scss/main.scss')
       .pipe(plumber({
-        errorHandler : function (error) {
+        errorHandler: function (error) {
           gutil.log('error while looking at project ' + name);
           gutil.log(error.message);
           this.emit('end');
         }
       }))
       .pipe(compass({
-        project : Path.join(__dirname),
-        css : '.tmp/css/' + name,
-        sass : 'src/presentations/' + name + '/scss',
-        image : 'src/presentations/' + name + '/img',
-        font : 'src/lib/font'
+        project: Path.join(__dirname),
+        css: '.tmp/css/' + name,
+        sass: 'src/presentations/' + name + '/scss',
+        image: 'src/presentations/' + name + '/img',
+        font: 'src/lib/font'
       }))
       .pipe(plumber({
-        errorHandler : function (error) {
+        errorHandler: function (error) {
           gutil.log('error in minification while looking at project ' + name);
           gutil.log(error.message);
           this.emit('end');
@@ -112,8 +116,8 @@ function scriptCompile(cb) {
 
 function server() {
   browserSync({
-    server : {
-      baseDir : outDir
+    server: {
+      baseDir: outDir
     }
   });
 
@@ -121,9 +125,10 @@ function server() {
 }
 
 function deployGhPages() {
-  return gulp.src(outDir + '/**')
+  return gulp
+    .src(outDir + '/**')
     .pipe(ghPages({
-      cacheDir : ghPagesDir
+      cacheDir: ghPagesDir
     }));
 }
 
